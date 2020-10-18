@@ -9,13 +9,6 @@ global:
   external_labels:
       monitor: 'prom-stack'
 
-# Alertmanager configuration
-alerting:
-  alertmanagers:
-  - static_configs:
-    - targets:
-      - alertmanager:9093
-
 # Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
 rule_files:
   # - "first_rules.yml"
@@ -27,5 +20,4 @@ scrape_configs:
       - targets:
         - prometheus:9090
         - pushgateway:9091
-        - alertmanager:9093
         - grafana:3000
